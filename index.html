@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDR & Psikolojik Danışmanlık Portalı</title>
+    <title>Mehmet Eren Haşlama | PDR & Psikolojik Danışmanlık Portalı</title>
     <style>
         /* Genel Sayfa Ayarları */
         body {
@@ -51,7 +51,7 @@
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 55px 20px;
         }
 
         header h1 {
@@ -60,8 +60,8 @@
         }
 
         header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.15rem;
+            opacity: 0.95;
             margin-top: 10px;
         }
 
@@ -96,13 +96,38 @@
             margin-top: 0;
         }
 
-        /* Hakkımda ve İletişim Kutuları */
+        /* Bilgi Kutuları */
         .info-card {
             background: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             margin-bottom: 25px;
+        }
+
+        /* Misyon Maddeleri */
+        .mission-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .mission-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .mission-list li::before {
+            content: "✓";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .mission-list li:last-child {
+            border-bottom: none;
         }
 
         /* İletişim Formu */
@@ -149,7 +174,7 @@
         <ul>
             <li><a href="#anasayfa">Ana Sayfa</a></li>
             <li><a href="#yazilar">Rehberlik Yazıları</a></li>
-            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#hakkimda">Hakkımda & Misyonumuz</a></li>
             <li><a href="#iletisim">İletişim</a></li>
         </ul>
     </nav>
@@ -157,7 +182,7 @@
     <!-- Header -->
     <header id="anasayfa">
         <h1>Psikolojik Danışmanlık ve Rehberlik Portalı</h1>
-        <p>Ruh sağlığı, kişisel gelişim, akademik başarı ve psikolojik dayanıklılık üzerine rehber kaynak.</p>
+        <p>Mehmet Eren Haşlama | Ruh Sağlığı, Kişisel Gelişim ve Rehberlik Kaynağı</p>
     </header>
 
     <main>
@@ -186,12 +211,23 @@
             </article>
         </section>
 
-        <!-- Hakkımda Bölümü -->
+        <!-- Hakkımda & Misyonumuz Bölümü -->
         <section id="hakkimda">
-            <h2 class="section-title">👤 Hakkımda / Misyonumuz</h2>
+            <h2 class="section-title">👤 Hakkımda</h2>
             <div class="info-card">
-                <p>Merhaba! Bu platform; Psikolojik Danışmanlık ve Rehberlik (PDR) alanında bilimsel, güncel ve bilgilendirici içerikleri herkes için erişilebilir kılmak amacıyla kurulmuştur.</p>
-                <p>Amacımız; bireylerin özfarkındalık kazanmalarına, akademik ve kişisel gelişim süreçlerinde doğru bilgiye ulaşmalarına katkı sağlamaktır.</p>
+                <p>Merhaba, ben <strong>Mehmet Eren Haşlama</strong>[cite: 10.2]. Akdeniz Üniversitesi Rehberlik ve Psikolojik Danışmanlık (PDR) alanındaki akademik altyapım ve saha deneyimlerimle psikolojik danışmanlık süreçlerine katkı sunmaktayım[cite: 10.2].</p>
+                <p>Bireysel psikolojik danışma süreçlerinde; etik ilkelere bağlılık, koşulsuz kabul, empatik anlayış ve gizlilik esaslarına dayanarak bireylerin kendilerini daha iyi tanımalarını ve potansiyellerine ulaşmalarını destekliyorum[cite: 10.2].</p>
+            </div>
+
+            <h2 class="section-title">🎯 Misyonumuz</h2>
+            <div class="info-card">
+                <p>Bu platformun temel kuruluş amacı; psikoloji ve rehberlik alanındaki bilimsel ve etik bilgiyi herkes için anlaşılır, güvenilir ve erişilebilir kılmaktır[cite: 10.2]. Bu doğrultuda misyonumuz:</p>
+                <ul class="mission-list">
+                    <li><strong>Özfarkındalık Kazandırmak:</strong> Bireylerin duygu, düşünce ve davranışlarını daha sağlıklı değerlendirmelerine rehberlik etmek[cite: 10.2].</li>
+                    <li><strong>Koruyucu Ruh Sağlığı Hizmeti:</strong> Psikolojik dayanıklılığı artırarak sorunlar ortaya çıkmadan önce önleyici bilgilendirme sunmak[cite: 10.2].</li>
+                    <li><strong>Akademik ve Kişisel Gelişim:</strong> Öğrencilere verimli çalışma, kaygı yönetimi ve kariyer planlama süreçlerinde bilimsel kaynak sağlamak[cite: 10.2].</li>
+                    <li><strong>Etik İlkelerden Ödün Vermemek:</strong> Tüm yayın ve bilgilendirmelerde Rehberlik ve Psikolojik Danışmanlık etik standartlarına sadık kalmak[cite: 10.2].</li>
+                </ul>
             </div>
         </section>
 
@@ -216,7 +252,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 PDR Bilgi Servisi - Tüm hakları saklıdır.</p>
+        <p>&copy; 2026 Mehmet Eren Haşlama - PDR Bilgi Servisi. Tüm hakları saklıdır.</p>
     </footer>
 
 </body>
