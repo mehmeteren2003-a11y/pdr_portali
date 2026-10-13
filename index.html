@@ -182,7 +182,7 @@
             background-color: #2980b9;
         }
 
-        /* Modal (Detay Sayfası / Pop-up) Animasyonlu */
+        /* Modal (Detay Penceresi) Animasyonlu */
         .modal {
             display: none;
             position: fixed;
@@ -285,25 +285,25 @@
             <article onclick="openModal('stres')">
                 <h3>Stres Yönetimi ve Başa Çıkma Yolları</h3>
                 <p>Günlük yaşamda karşılaştığımız yoğun stresle başa çıkabilmek için nefes egzersizleri, zaman yönetimi teknikleri ve bilişsel yeniden yapılandırma büyük önem taşır...</p>
-                <button class="read-more-btn">Detaylı Oku & Detaylar &rarr;</button>
+                <button class="read-more-btn">Detaylı Oku &rarr;</button>
             </article>
 
             <article onclick="openModal('kaygi')">
                 <h3>Sınav Kaygısı Nedir ve Nasıl Yönetilir?</h3>
                 <p>Sınav öncesinde hissedilen hafif kaygı doğaldır ve odaklanmayı artırır. Ancak kaygı düzeyi performansı düşürmeye başladığında doğru teknikler devreye girmelidir...</p>
-                <button class="read-more-btn">Detaylı Oku & Detaylar &rarr;</button>
+                <button class="read-more-btn">Detaylı Oku &rarr;</button>
             </article>
 
             <article onclick="openModal('ofke')">
                 <h3>Öfke Kontrolü ve Sağlıklı İletişim</h3>
                 <p>Öfke, tıpkı sevinç ve üzüntü gibi doğal bir duygudur. Önemli olan öfkeyi bastırmak değil, onu "Ben Dili" kullanarak sağlıklı ifade edebilmektir...</p>
-                <button class="read-more-btn">Detaylı Oku & Detaylar &rarr;</button>
+                <button class="read-more-btn">Detaylı Oku &rarr;</button>
             </article>
 
             <article onclick="openModal('ders')">
                 <h3>Verimli Ders Çalışma Teknikleri (Pomodoro & Bilişsel Haritalar)</h3>
                 <p>Saatlerce masada oturmak verimli çalıştığınız anlamına gelmez. Zihni dinlendirerek odaklanmayı sağlayan tekniklerle başarıyı artırabilirsiniz...</p>
-                <button class="read-more-btn">Detaylı Oku & Detaylar &rarr;</button>
+                <button class="read-more-btn">Detaylı Oku &rarr;</button>
             </article>
         </section>
 
@@ -311,4 +311,107 @@
         <section id="hakkimda">
             <h2 class="section-title">👤 Hakkımda</h2>
             <div class="info-card">
-                <p>Merhaba, ben <strong>Mehmet Eren Haşlama</strong>. Akdeniz Üniversitesi Rehberlik ve
+                <p>Merhaba, ben <strong>Mehmet Eren Haşlama</strong>. Akdeniz Üniversitesi Rehberlik ve Psikolojik Danışmanlık (PDR) alanındaki akademik altyapım ve saha deneyimlerimle psikolojik danışmanlık süreçlerine katkı sunmaktayım.</p>
+                <p>Bireysel psikolojik danışma süreçlerinde; etik ilkelere bağlılık, koşulsuz kabul, empatik anlayış ve gizlilik esaslarına dayanarak bireylerin kendilerini daha iyi tanımalarını ve potansiyellerine ulaşmalarını destekliyorum.</p>
+            </div>
+
+            <h2 class="section-title">🎯 Misyonumuz</h2>
+            <div class="info-card">
+                <p>Bu platformun temel kuruluş amacı; psikoloji ve rehberlik alanındaki bilimsel ve etik bilgiyi herkes için anlaşılır, güvenilir ve erişilebilir kılmaktır. Bu doğrultuda misyonumuz:</p>
+                <ul class="mission-list">
+                    <li><strong>Özfarkındalık Kazandırmak:</strong> Bireylerin duygu, düşünce ve davranışlarını daha sağlıklı değerlendirmelerine rehberlik etmek.</li>
+                    <li><strong>Koruyucu Ruh Sağlığı Hizmeti:</strong> Psikolojik dayanıklılığı artırarak sorunlar ortaya çıkmadan önce önleyici bilgilendirme sunmak.</li>
+                    <li><strong>Akademik ve Kişisel Gelişim:</strong> Öğrencilere verimli çalışma, kaygı yönetimi ve kariyer planlama süreçlerinde bilimsel kaynak sağlamak.</li>
+                    <li><strong>Etik İlkelerden Ödün Vermemek:</strong> Tüm yayın ve bilgilendirmelerde Rehberlik ve Psikolojik Danışmanlık etik standartlarına sadık kalmak.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- İletişim Bölümü -->
+        <section id="iletisim">
+            <h2 class="section-title">✉️ Bize Ulaşın / Soru Sorun</h2>
+            <div class="info-card contact-form">
+                <form action="#" method="post" onsubmit="alert('Mesajınız alındı!'); return false;">
+                    <label for="name">Adınız Soyadınız:</label>
+                    <input type="text" id="name" name="name" placeholder="Örn: Ahmet Yılmaz" required>
+
+                    <label for="email">E-posta Adresiniz:</label>
+                    <input type="email" id="email" name="email" placeholder="Örn: ahmet@example.com" required>
+
+                    <label for="message">Mesajınız / Sorunuz:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Danışmak istediğiniz konuyu yazabilirsiniz..." required></textarea>
+
+                    <button type="submit">Gönder</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Detay Penceresi -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody" class="modal-body">
+                <!-- İçerik JavaScript ile dinamik yüklenecek -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mehmet Eren Haşlama - PDR Bilgi Servisi. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        const contentData = {
+            stres: {
+                title: "Stres Yönetimi ve Başa Çıkma Yolları",
+                html: `
+                    <p>Stres, bireyin içsel veya dışsal uyaranlara karşı verdiği doğal bir tepkidir. Yönetilebilir düzeyde stres motivasyon sağlarken, kronikleşen stres fizyolojik ve psikolojik sağlığı olumsuz etkiler.</p>
+                    <h4>1. Fizyolojik Egzersizler (Diyafram Nefesi)</h4>
+                    <p>Stres anında sempatik sinir sistemi devreye girer. Doğru diyafram nefesi alarak (4 saniye al, 4 saniye tut, 6 saniye ver) parasempatik sistemi aktif edip vücudu sakinleştirebilirsiniz.</p>
+                    <h4>2. Bilişsel Yeniden Yapılandırma</h4>
+                    <p>Olaylara yüklediğimiz anlamları gözden geçirmek; felaketleştirme veya ya hep ya hiç tarzı olumsuz düşünce kalıplarını fark edip rasyonel düşüncelerle değiştirmek esastır.</p>
+                    <h4>3. Zaman ve Öncelik Yönetimi</h4>
+                    <p>Görünürde karmaşık olan görevleri küçük adımlara bölerek (Eisenhower Matrisi) kontrol hissini yeniden kazanabilirsiniz.</p>
+                `
+            },
+            kaygi: {
+                title: "Sınav Kaygısı Nedir ve Nasıl Yönetilir?",
+                html: `
+                    <p>Sınav kaygısı, öğrenilen bilginin sınav sırasında etkili biçimde kullanılmasına engel olan ve başarısızlık korkusundan kaynaklanan yoğun bir uyarılmışlık halidir.</p>
+                    <h4>1. Zihinsel Hazırlık ve Öz-Konuşma</h4>
+                    <p>"Başaramayacağım, her şeyi unutacağım" şeklindeki olumsuz içsel konuşmaları "Elimden gelen hazırlığı yaptım, odaklanabilirim" ifadeleriyle dönüştürmek gerekir.</p>
+                    <h4>2. Sınav Anında Kaygı Egzersizi (5-4-3-2-1 Tekniği)</h4>
+                    <p>Sınav anında panik hissedildiğinde çevrenizde gördüğünüz 5 nesneye, dokunduğunuz 4 dokuya, duyduğunuz 3 sese odaklanarak zihni 'şu an'a getirebilirsiniz.</p>
+                    <h4>3. Düzenli Uyku ve Beslenme</h4>
+                    <p>Gelişimsel olarak zihinsel odaklanmayı korumak için sınav öncesi süreçte düzenli uyku ve biyolojik ritmi korumak kritik öneme sahiptir.</p>
+                `
+            },
+            ofke: {
+                title: "Öfke Kontrolü ve Sağlıklı İletişim",
+                html: `
+                    <p>Öfke temel bir insani duygudur; problem olan öfkenin kendisi değil, dışa vurum şeklidir.</p>
+                    <h4>1. 'Ben Dili' Kullanımı</h4>
+                    <p>Suçlayıcı ve yargılayıcı 'Sen Dili' ("Sen beni hiç dinlemiyorsun") yerine, duygu ve ihtiyacı belirten 'Ben Dili' ("Ben konuşurken dinlenmediğimi hissettiğimde üzülüyorum") kullanılmalıdır.</p>
+                    <h4>2. Mola Alma (Time-Out) Tekniği</h4>
+                    <p>Öfke seviyesi yükseldiğinde tartışmaya devam etmek yerine "Şu an öfkeliyim, 15 dakika sonra bu konuyu tekrar konuşalım" diyerek ortamdan kısa süreliğine uzaklaşmak ilişkiyi korur.</p>
+                    <h4>3. Altında Yatan İhtiyacı Fark Etmek</h4>
+                    <p>Öfke genellikle ikincil bir duygudur; altında kırgınlık, çaresizlik veya anlaşılmama hissi yatabilir. Ana duyguya odaklanmak çözümü kolaylaştırır.</p>
+                `
+            },
+            ders: {
+                title: "Verimli Ders Çalışma Teknikleri",
+                html: `
+                    <p>Çalışma süresinin uzunluğu değil, çalışmanın niteliği ve odaklanma seviyesi başarıyı belirler.</p>
+                    <h4>1. Pomodoro Tekniği</h4>
+                    <p>25 dakika tam odaklanma ile çalışma ve 5 dakika kısa mola. 4 periyot tamamlandıktan sonra 20-30 dakikalık uzun mola ile zihinsel yorgunluk önlenir.</p>
+                    <h4>2. Active Recall (Aktif Hatırlama)</h4>
+                    <p>Sadece okumak pasif öğrenmedir. Okuduktan sonra kitabı kapatıp kendi cümlelerinizle özet çıkarmak veya başkasına anlatır gibi yapmak kalıcı hafızayı destekler.</p>
+                    <h4>3. Zihin Haritaları (Mind Mapping)</h4>
+                    <p>Karmaşık konuları anahtar kelimeler ve görsel bağlantılarla haritalandırmak, sağ ve sol beyin yarımkürelerini eş zamanlı çalıştırır.</p>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const data = content
