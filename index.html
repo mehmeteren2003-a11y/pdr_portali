@@ -46,7 +46,7 @@
             color: #3498db;
         }
 
-        /* Üst Header */
+        /* Header */
         header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
@@ -65,11 +65,19 @@
             margin-top: 10px;
         }
 
-        /* Ana İçerik Alanı */
+        /* Ana Görünüm Konteyneri */
         main {
             max-width: 850px;
             margin: 30px auto;
             padding: 0 20px;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        /* Sayfa Geçiş Animasyon Sınıfları */
+        .fade-out {
+            opacity: 0;
+            transform: translateY(15px);
+            pointer-events: none;
         }
 
         /* Bölüm Başlıkları */
@@ -81,7 +89,7 @@
             margin-bottom: 20px;
         }
 
-        /* Interactive Animasyonlu Kartlar */
+        /* Etkileşimli Kartlar */
         article {
             background: white;
             padding: 25px;
@@ -90,11 +98,10 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             border-left: 5px solid #3498db;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
         }
 
         article:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(52, 152, 219, 0.15);
         }
 
@@ -105,8 +112,8 @@
 
         .read-more-btn {
             display: inline-block;
-            margin-top: 12px;
-            padding: 8px 18px;
+            margin-top: 15px;
+            padding: 10px 20px;
             background-color: #3498db;
             color: white;
             border: none;
@@ -114,11 +121,12 @@
             font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
 
         .read-more-btn:hover {
             background-color: #2980b9;
+            transform: translateX(3px);
         }
 
         /* Bilgi Kutuları */
@@ -130,7 +138,6 @@
             margin-bottom: 25px;
         }
 
-        /* Misyon Maddeleri */
         .mission-list {
             list-style-type: none;
             padding: 0;
@@ -182,74 +189,72 @@
             background-color: #2980b9;
         }
 
-        /* Modal (Detay Penceresi) Animasyonlu */
-        .modal {
+        /* TAM SAYFA DETAY GÖRÜNÜMÜ */
+        #detailPage {
             display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
-        .modal.show {
+        #detailPage.active {
             display: block;
             opacity: 1;
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            margin: 5% auto;
-            padding: 35px;
-            border-radius: 12px;
-            max-width: 750px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            transform: translateY(-20px);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .modal.show .modal-content {
             transform: translateY(0);
         }
 
-        .close-btn {
-            position: absolute;
-            right: 25px;
-            top: 20px;
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .close-btn:hover {
-            color: #e74c3c;
-        }
-
-        .modal-body h4 {
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: #eef2f5;
             color: #2c3e50;
-            margin-top: 20px;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 5px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: background 0.2s;
         }
 
-        .modal-body ul {
-            padding-left: 20px;
+        .back-btn:hover {
+            background-color: #dfe6e9;
         }
 
-        .modal-body li {
-            margin-bottom: 8px;
+        .detail-content h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
         }
 
-        /* Alt Bilgi */
+        .detail-content h3 {
+            color: #3498db;
+            margin-top: 25px;
+        }
+
+        .detail-content p, .detail-content li {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: #f8fbfe;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 25px;
@@ -264,10 +269,10 @@
     <!-- Menü -->
     <nav>
         <ul>
-            <li><a href="#anasayfa">Ana Sayfa</a></li>
-            <li><a href="#yazilar">Rehberlik Yazıları</a></li>
-            <li><a href="#hakkimda">Hakkımda & Misyonumuz</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
+            <li><a href="#anasayfa" onclick="showMainPage()">Ana Sayfa</a></li>
+            <li><a href="#yazilar" onclick="showMainPage()">Rehberlik Yazıları</a></li>
+            <li><a href="#hakkimda" onclick="showMainPage()">Hakkımda & Misyonumuz</a></li>
+            <li><a href="#iletisim" onclick="showMainPage()">İletişim</a></li>
         </ul>
     </nav>
 
@@ -277,33 +282,34 @@
         <p>Mehmet Eren Haşlama | Ruh Sağlığı, Kişisel Gelişim ve Rehberlik Kaynağı</p>
     </header>
 
-    <main>
+    <!-- ANA SAYFA İÇERİĞİ -->
+    <main id="mainContent">
         <!-- Yazılar Bölümü -->
         <section id="yazilar">
             <h2 class="section-title">📚 Rehberlik & Psikoloji Yazıları</h2>
             
-            <article onclick="openModal('stres')">
+            <article>
                 <h3>Stres Yönetimi ve Başa Çıkma Yolları</h3>
                 <p>Günlük yaşamda karşılaştığımız yoğun stresle başa çıkabilmek için nefes egzersizleri, zaman yönetimi teknikleri ve bilişsel yeniden yapılandırma büyük önem taşır...</p>
-                <button class="read-more-btn">Detaylı Oku &rarr;</button>
+                <button class="read-more-btn" onclick="openDetailPage('stres')">Detaylı Oku & Sayfaya Git &rarr;</button>
             </article>
 
-            <article onclick="openModal('kaygi')">
+            <article>
                 <h3>Sınav Kaygısı Nedir ve Nasıl Yönetilir?</h3>
                 <p>Sınav öncesinde hissedilen hafif kaygı doğaldır ve odaklanmayı artırır. Ancak kaygı düzeyi performansı düşürmeye başladığında doğru teknikler devreye girmelidir...</p>
-                <button class="read-more-btn">Detaylı Oku &rarr;</button>
+                <button class="read-more-btn" onclick="openDetailPage('kaygi')">Detaylı Oku & Sayfaya Git &rarr;</button>
             </article>
 
-            <article onclick="openModal('ofke')">
+            <article>
                 <h3>Öfke Kontrolü ve Sağlıklı İletişim</h3>
                 <p>Öfke, tıpkı sevinç ve üzüntü gibi doğal bir duygudur. Önemli olan öfkeyi bastırmak değil, onu "Ben Dili" kullanarak sağlıklı ifade edebilmektir...</p>
-                <button class="read-more-btn">Detaylı Oku &rarr;</button>
+                <button class="read-more-btn" onclick="openDetailPage('ofke')">Detaylı Oku & Sayfaya Git &rarr;</button>
             </article>
 
-            <article onclick="openModal('ders')">
+            <article>
                 <h3>Verimli Ders Çalışma Teknikleri (Pomodoro & Bilişsel Haritalar)</h3>
                 <p>Saatlerce masada oturmak verimli çalıştığınız anlamına gelmez. Zihni dinlendirerek odaklanmayı sağlayan tekniklerle başarıyı artırabilirsiniz...</p>
-                <button class="read-more-btn">Detaylı Oku &rarr;</button>
+                <button class="read-more-btn" onclick="openDetailPage('ders')">Detaylı Oku & Sayfaya Git &rarr;</button>
             </article>
         </section>
 
@@ -347,13 +353,11 @@
         </section>
     </main>
 
-    <!-- Modal Detay Penceresi -->
-    <div id="detailModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div id="modalBody" class="modal-body">
-                <!-- İçerik JavaScript ile dinamik yüklenecek -->
-            </div>
+    <!-- DETAY SAYFASI ALANI (Tek Sayfada Dinamik Açılır) -->
+    <div id="detailPage">
+        <button class="back-btn" onclick="showMainPage()">← Ana Sayfaya Dön</button>
+        <div id="detailContainer" class="detail-content">
+            <!-- İçerik JavaScript ile dinamik dolacak -->
         </div>
     </div>
 
@@ -362,56 +366,156 @@
     </footer>
 
     <script>
-        const contentData = {
+        // ZENGİN VE AKADEMİK DETAY İÇERİKLERİ
+        const articleDetails = {
             stres: {
-                title: "Stres Yönetimi ve Başa Çıkma Yolları",
-                html: `
-                    <p>Stres, bireyin içsel veya dışsal uyaranlara karşı verdiği doğal bir tepkidir. Yönetilebilir düzeyde stres motivasyon sağlarken, kronikleşen stres fizyolojik ve psikolojik sağlığı olumsuz etkiler.</p>
-                    <h4>1. Fizyolojik Egzersizler (Diyafram Nefesi)</h4>
-                    <p>Stres anında sempatik sinir sistemi devreye girer. Doğru diyafram nefesi alarak (4 saniye al, 4 saniye tut, 6 saniye ver) parasempatik sistemi aktif edip vücudu sakinleştirebilirsiniz.</p>
-                    <h4>2. Bilişsel Yeniden Yapılandırma</h4>
-                    <p>Olaylara yüklediğimiz anlamları gözden geçirmek; felaketleştirme veya ya hep ya hiç tarzı olumsuz düşünce kalıplarını fark edip rasyonel düşüncelerle değiştirmek esastır.</p>
-                    <h4>3. Zaman ve Öncelik Yönetimi</h4>
-                    <p>Görünürde karmaşık olan görevleri küçük adımlara bölerek (Eisenhower Matrisi) kontrol hissini yeniden kazanabilirsiniz.</p>
+                title: "Stres Yönetimi ve Başa Çıkma Yolları: Derinlemesine Rehber",
+                content: `
+                    <p>Stres, organizmanın fizyolojik ve psikolojik dengesini tehdit eden zorlayıcı uyarılara karşı verdiği biyolojik bir uyum tepkisidir. Günlük hayatta karşılaşılan stresin tamamı zararlı değildir; optimal düzeydeki stres (Östres), bireyin performansını artırır ve motivasyonu canlı tutar. Ancak kronik stres, kardiyovasküler sistemden bağışıklığa kadar birçok alanı olumsuz etkiler.</p>
+                    
+                    <h3>1. Bilişsel Yeniden Yapılandırma (Cognitive Restructuring)</h3>
+                    <p>Stres tepkisini belirleyen temel unsur olayın kendisi değil, olaya verilen zihinsel anlamdır. Bilişsel Davranışçı Terapi (BDT) ilkelerine göre, stresi artıran otomatik düşünce kalıpları şunlardır:</p>
+                    <ul>
+                        <li><strong>Felaketleştirme:</strong> Olası olumsuz senaryoları en kötü haliyle gerçekleşecekmiş gibi algılama.</li>
+                        <li><strong>Ya Hep Ya Hiç Düşüncesi:</strong> Süreçleri tam başarı ya da tam başarısızlık olarak iki uçta değerlendirme.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Uygulama:</strong> Stres hissettiğinizde kendinize sorun: "Bu durum hakkındaki düşüncem %100 kanıta mı dayanıyor, yoksa varsayım mı?"
+                    </div>
+
+                    <h3>2. Fizyolojik Sakinleşme: Diyafram Nefesi</h3>
+                    <p>Stres anında sempatik sinir sistemi aktifleşir ve "savaş ya da kaç" tepkisi tetiklenir. Parasempatik sinir sistemini aktif hale getirmek için biyolojik olarak kanıtlanmış en etkili yol derin diyafram nefesidir.</p>
+                    <ul>
+                        <li>Burundan 4 saniye boyunca nefes alın (karnınızın şiştiğini hissedin).</li>
+                        <li>Nefesi 4 saniye boyunca tutun.</li>
+                        <li>Ağızdan yavaşça 6 saniyede verin. Bu döngüyü 5 kez tekrarlayın.</li>
+                    </ul>
+
+                    <h3>3. Zaman Yönetimi ve Eisenhower Matrisi</h3>
+                    <p>Kontrol kaybı hissi stresi doğrudan besler. Görevleri önem ve aciliyet derecesine göre 4 çeyreğe ayırarak zamanı yönetmek zihinsel yükü belirgin şekilde hafifletir.</p>
                 `
             },
             kaygi: {
-                title: "Sınav Kaygısı Nedir ve Nasıl Yönetilir?",
-                html: `
-                    <p>Sınav kaygısı, öğrenilen bilginin sınav sırasında etkili biçimde kullanılmasına engel olan ve başarısızlık korkusundan kaynaklanan yoğun bir uyarılmışlık halidir.</p>
-                    <h4>1. Zihinsel Hazırlık ve Öz-Konuşma</h4>
-                    <p>"Başaramayacağım, her şeyi unutacağım" şeklindeki olumsuz içsel konuşmaları "Elimden gelen hazırlığı yaptım, odaklanabilirim" ifadeleriyle dönüştürmek gerekir.</p>
-                    <h4>2. Sınav Anında Kaygı Egzersizi (5-4-3-2-1 Tekniği)</h4>
-                    <p>Sınav anında panik hissedildiğinde çevrenizde gördüğünüz 5 nesneye, dokunduğunuz 4 dokuya, duyduğunuz 3 sese odaklanarak zihni 'şu an'a getirebilirsiniz.</p>
-                    <h4>3. Düzenli Uyku ve Beslenme</h4>
-                    <p>Gelişimsel olarak zihinsel odaklanmayı korumak için sınav öncesi süreçte düzenli uyku ve biyolojik ritmi korumak kritik öneme sahiptir.</p>
+                title: "Sınav Kaygısı ve Performans Yönetimi",
+                content: `
+                    <p>Sınav kaygısı, öğrenilen bilginin değerlendirilmesi sürecinde yaşanan, bireyin potansiyelini tam olarak sergilemesini engelleyen yüksek uyarılmışlık durumudur. Zihinsel, bedensel ve davranışsal boyutları bulunur.</p>
+
+                    <h3>1. Zihinsel Belirtiler ve Fonksiyonel Düşünme</h3>
+                    <p>Kaygılı bireyler sınav esnasında konuya değil, olası başarısızlığın sonuçlarına odaklanırlar. "Aileni hayal kırıklığına uğratacaksın", "Zaman yetmeyecek" gibi olumsuz içsel konuşmalar çalışma belleğinin kapasitesini işgal eder.</p>
+                    <div class="highlight-box">
+                        <strong>Çözüm Yolu:</strong> İçsel konuşmaları "Aleyhime çalışan cümleler" yerine "Sürece odaklayan cümleler" ile değiştirin: "Şu an sadece bu soruya odaklanmam yeterli."
+                    </div>
+
+                    <h3>2. Sınav Anında Panik Yönetimi: 5-4-3-2-1 Topraklanma Tekniği</h3>
+                    <p>Sınav esnasında zihniniz dağıldığında veya panik hissettiğinizde duyusal farkındalık tekniğini kullanın:</p>
+                    <ul>
+                        <li>Gözünüzle görebildiğiniz <strong>5 nesneye</strong> odaklanın.</li>
+                        <li>Dokunabileceğiniz <strong>4 farklı dokuyu</strong> hissedin (masanın yüzeyi, kalemin dokusu vb.).</li>
+                        <li>Kulağınıza gelen <strong>3 farklı sesi</strong> ayırt edin.</li>
+                        <li>Koklayabildiğiniz <strong>2 kokuyu</strong> fark edin.</li>
+                        <li>Ağzınızdaki <strong>1 tadı</strong> odak noktası yapın.</li>
+                    </ul>
+
+                    <h3>3. Hazırlık Sürecinde Biyolojik Ritim</h3>
+                    <p>REM uykusu bilginin uzun süreli hafızaya aktarılmasında kritik rol oynar. Sınav gecesi uykusuz kalmak bilişsel esnekliği ve problem çözme hızını %40 oranında düşürür.</p>
                 `
             },
             ofke: {
-                title: "Öfke Kontrolü ve Sağlıklı İletişim",
+                title: "Öfke Kontrolü ve Kişilerarası İletişim Becerileri",
                 html: `
-                    <p>Öfke temel bir insani duygudur; problem olan öfkenin kendisi değil, dışa vurum şeklidir.</p>
-                    <h4>1. 'Ben Dili' Kullanımı</h4>
-                    <p>Suçlayıcı ve yargılayıcı 'Sen Dili' ("Sen beni hiç dinlemiyorsun") yerine, duygu ve ihtiyacı belirten 'Ben Dili' ("Ben konuşurken dinlenmediğimi hissettiğimde üzülüyorum") kullanılmalıdır.</p>
-                    <h4>2. Mola Alma (Time-Out) Tekniği</h4>
-                    <p>Öfke seviyesi yükseldiğinde tartışmaya devam etmek yerine "Şu an öfkeliyim, 15 dakika sonra bu konuyu tekrar konuşalım" diyerek ortamdan kısa süreliğine uzaklaşmak ilişkiyi korur.</p>
-                    <h4>3. Altında Yatan İhtiyacı Fark Etmek</h4>
-                    <p>Öfke genellikle ikincil bir duygudur; altında kırgınlık, çaresizlik veya anlaşılmama hissi yatabilir. Ana duyguya odaklanmak çözümü kolaylaştırır.</p>
+                    <p>Öfke, tehdit, engellenme veya adaletsizlik algısı karşısında ortaya çıkan son derece doğal, evrensel ve koruyucu bir duygudur. Problem olan öfke duygusunun kendisi değil, kontrolsüz saldırganlık biçiminde dışa vurulmasıdır.</p>
+
+                    <h3>1. Öfkenin İkincil Duygu Niteliği</h3>
+                    <p>Öfke çoğunlukla buzdağının suyun üstünde kalan kısmıdır. Altında genellikle kırgınlık, haksızlığa uğrama, yetersizlik veya anlaşılmama hissi gibi ikincil duygular yatar. Öfkeyi yönetebilmek için altta yatan asıl ihtiyacı tanımlamak gerekir.</p>
+
+                    <h3>2. Suçlayıcı Dil Yerine 'Ben Dili' Kullanımı</h3>
+                    <p>İletişim çatışmalarının en büyük nedeni 'Sen Dili' ifadelerdir. "Sen beni hiç dinlemiyorsun" cümlesi karşı tarafta savunma veya karşı saldırı mekanizmasını tetikler.</p>
+                    <div class="highlight-box">
+                        <strong>Ben Dili Formülü:</strong> Olay + Bendeki Etkisi + Duygum + İhtiyacım<br>
+                        <em>Örnek:</em> "Sözüm kesildiğinde (Olay), düşüncelerimi aktaramadığımı hissedip (Etki) üzülüyorum (Duygu). Dinlenilmeye ihtiyacım var (İhtiyaç)."
+                    </div>
+
+                    <h3>3. Mola Alma (Time-Out) Stratejisi</h3>
+                    <p>Fizyolojik olarak nabız 100/dk üzerine çıktığında sağlıklı mantıksal düşünme durur. Tartışmanın şiddetlendiği anlarda 15-20 dakikalık uzlaşmalı bir mola vermek yapıcı iletişim için şarttır.</p>
                 `
             },
             ders: {
-                title: "Verimli Ders Çalışma Teknikleri",
-                html: `
-                    <p>Çalışma süresinin uzunluğu değil, çalışmanın niteliği ve odaklanma seviyesi başarıyı belirler.</p>
-                    <h4>1. Pomodoro Tekniği</h4>
-                    <p>25 dakika tam odaklanma ile çalışma ve 5 dakika kısa mola. 4 periyot tamamlandıktan sonra 20-30 dakikalık uzun mola ile zihinsel yorgunluk önlenir.</p>
-                    <h4>2. Active Recall (Aktif Hatırlama)</h4>
-                    <p>Sadece okumak pasif öğrenmedir. Okuduktan sonra kitabı kapatıp kendi cümlelerinizle özet çıkarmak veya başkasına anlatır gibi yapmak kalıcı hafızayı destekler.</p>
-                    <h4>3. Zihin Haritaları (Mind Mapping)</h4>
-                    <p>Karmaşık konuları anahtar kelimeler ve görsel bağlantılarla haritalandırmak, sağ ve sol beyin yarımkürelerini eş zamanlı çalıştırır.</p>
+                title: "Verimli Ders Çalışma ve Kalıcı Öğrenme Teknikleri",
+                content: `
+                    <p>Saatlerce masa başında vakit geçirmek öğrenmenin gerçekleştiğini göstermez. Beynin bilgi işleme süreçlerine uygun olarak geliştirilmiş bilimsel öğrenme teknikleri, daha kısa sürede yüksek kalıcılık sağlar.</p>
+
+                    <h3>1. Pomodoro Tekniği ile Odaklanma Yönetimi</h3>
+                    <p>İnsan beyninin kesintisiz yüksek odaklanma süresi sınırlıdır. Pomodoro tekniği, zihinsel yorgunluğu önleyerek dikkati zirvede tutar:</p>
+                    <ul>
+                        <li>25 dakika kesintisiz, odaklanmış çalışma (Bildirimler kapalı).</li>
+                        <li>5 dakika zihinsel dinlenme molası.</li>
+                        <li>4 periyot sonunda 20-30 dakikalık uzun mola.</li>
+                    </ul>
+
+                    <h3>2. Aktif Hatırlama (Active Recall)</h3>
+                    <p>Pasif okuma (metnin üstünü çizme veya tekrar tekrar okuma) illüzyonel bir öğrenme hissi yaratır. Kalıcı öğrenme, bilginin hafızadan geri çağrılmasıyla gerçekleşir.</p>
+                    <div class="highlight-box">
+                        <strong>Uygulama:</strong> Bir konuyu okuduktan sonra kitabı kapatın ve boş bir kağıda aklınızda kalan ana kavramları şematize ederek yazın.
+                    </div>
+
+                    <h3>3. Feynman Tekniği ile Kavramsal Anlayış</h3>
+                    <p>Bir konuyu gerçekten öğrenip öğrenmediğinizi anlamanın en kestirme yolu, onu 10 yaşındaki bir çocuğa anlatır gibi karmaşık terimlerden arındırarak sade bir dille ifade etmektir.</p>
                 `
             }
         };
 
-        function openModal(key) {
-            const data = content
+        // SAYFA GEÇİŞ FONKSİYONLARI
+        function openDetailPage(key) {
+            const data = articleDetails[key];
+            if (!data) return;
+
+            const main = document.getElementById('mainContent');
+            const detailPage = document.getElementById('detailPage');
+            const detailContainer = document.getElementById('detailContainer');
+
+            // 1. Ana sayfayı yavaşça gizle
+            main.classList.add('fade-out');
+
+            setTimeout(() => {
+                main.style.display = 'none';
+                
+                // 2. Detay içeriğini doldur
+                detailContainer.innerHTML = `
+                    <h2>${data.title}</h2>
+                    ${data.content || data.html}
+                `;
+
+                // 3. Detay sayfasını göster ve yukarı kaydır
+                detailPage.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                setTimeout(() => {
+                    detailPage.classList.add('active');
+                }, 50);
+
+            }, 400);
+        }
+
+        function showMainPage() {
+            const main = document.getElementById('mainContent');
+            const detailPage = document.getElementById('detailPage');
+
+            // 1. Detay sayfasını gizle
+            detailPage.classList.remove('active');
+
+            setTimeout(() => {
+                detailPage.style.display = 'none';
+                
+                // 2. Ana sayfayı tekrar getir
+                main.style.display = 'block';
+                
+                setTimeout(() => {
+                    main.classList.remove('fade-out');
+                }, 50);
+
+            }, 400);
+        }
+    </script>
+
+</body>
+</html>
