@@ -133,7 +133,7 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
@@ -206,7 +206,7 @@
             background-color: #2980b9;
         }
 
-        /* BİLGİ KUTULARI VE İNTERAKTİF ARAÇLAR */
+        /* BİLGİ KUTULARI VE ARAÇLAR */
         .info-card {
             background: white;
             padding: 30px;
@@ -320,7 +320,7 @@
             background-color: #2980b9;
         }
 
-        /* DETAY BUTON */
+        /* DETAY BUTTON */
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -391,19 +391,19 @@
         </div>
 
         <div class="quote-box">
-            "Başarı, her gün tekrarlanan küçük çabaların ve doğru stratejilerin toplamıdır." — PDR Birimi
+            "İnsan, potansiyelini gerçekleştirmek için doğru rehberliğe ve güvenli bir ortama ihtiyaç duyar." — PDR Birimi
         </div>
 
         <div class="features-grid">
-            <div class="feature-item" onclick="navigateTo('yazilar')">
+            <div class="feature-item" onclick="openDetailPage('lgs_yks')">
                 <div style="font-size: 2.5rem;">🎯</div>
-                <h3>LGS & YKS Akademik Rehberlik</h3>
-                <p>Sınav dönemine özel çalışma programları, verimli ders taktikleri ve motivasyon araçları. (Tıkla & İncele)</p>
+                <h3>LGS & YKS Sınav Kaygısı ve Çalışma Teknikleri</h3>
+                <p>Sınav psikolojisi, kaygıyla baş etme yolları, 3 temel verimli çalışma taktiği ve haftalık ders programı aracı. (Tıkla & İncele)</p>
             </div>
-            <div class="feature-item" onclick="navigateTo('yazilar')">
-                <div style="font-size: 2.5rem;">🧠</div>
-                <h3>Sınav Kaygısı & Stres Yönetimi</h3>
-                <p>Kaygının kaynakları, fizyolojik tetikleyiciler ve başa çıkma stratejileri. (Tıkla & İncele)</p>
+            <div class="feature-item" onclick="openDetailPage('yetiskin_ebeveyn')">
+                <div style="font-size: 2.5rem;">👨‍👩‍👧‍👦</div>
+                <h3>Yetişkin, Ebeveyn & Meslek Hayatı Rehberliği</h3>
+                <p>Ebeveynlik tükenmişliği, iş stresi, yetişkinlik dönemi krizleri ve psikolojik baş etme stratejileri. (Tıkla & İncele)</p>
             </div>
             <div class="feature-item" onclick="navigateTo('hakkimda')">
                 <div style="font-size: 2.5rem;">🤝</div>
@@ -418,26 +418,26 @@
         <h2 class="section-title">📚 Rehberlik & Psikoloji Yazıları</h2>
         
         <article>
+            <h3>LGS & YKS Sınav Kaygısı, Stres Yönetimi ve Verimli Çalışma Stratejileri</h3>
+            <p>Sınav döneminde yaşanan kaygının kökenleri, Albert Bandura ve Aaron Beck kuramlarıyla analizler, 3 temel çalışma taktiği ve haftalık ders programı oluşturucu...</p>
+            <button class="read-more-btn" onclick="openDetailPage('lgs_yks')">Detaylı Oku & Sayfaya Git &rarr;</button>
+        </article>
+
+        <article>
+            <h3>Yetişkinler ve Ebeveynler İçin Psikolojik Rehberlik: Stresle Başa Çıkma</h3>
+            <p>Erik Erikson’ın gelişim kuramı ışığında yetişkinlik dönemi krizleri, ebeveynlik tükenmişliği, iş hayatı baskıları ve Carl Rogers temelli baş etme yolları...</p>
+            <button class="read-more-btn" onclick="openDetailPage('yetiskin_ebeveyn')">Detaylı Oku & Sayfaya Git &rarr;</button>
+        </article>
+
+        <article>
             <h3>Stres Yönetimi ve Başa Çıkma Yolları</h3>
-            <p>Günlük yaşamda karşılaştığımız yoğun stresle başa çıkabilmek için nefes egzersizleri, zaman yönetimi teknikleri ve bilişsel yeniden yapılandırma büyük önem taşır...</p>
+            <p>Günlük yaşamda karşılaştığımız yoğun stresle başa çıkabilmek için nefes egzersizleri, zaman yönetimi teknikleri ve bilişsel yeniden yapılandırma...</p>
             <button class="read-more-btn" onclick="openDetailPage('stres')">Detaylı Oku & Sayfaya Git &rarr;</button>
         </article>
 
         <article>
-            <h3>Sınav Kaygısı Nedir, Neden Olur ve Nasıl Yönetilir?</h3>
-            <p>Sınav öncesinde hissedilen hafif kaygı doğaldır ve odaklanmayı artırır. Ancak kaygı düzeyi performansı düşürmeye başladığında derinlemesine teknikler devreye girmelidir...</p>
-            <button class="read-more-btn" onclick="openDetailPage('kaygi')">Detaylı Oku & Sayfaya Git &rarr;</button>
-        </article>
-
-        <article>
-            <h3>LGS ve YKS Dönemi Akademik Rehberlik & Çalışma Programları</h3>
-            <p>Sınava hazırlanan öğrenciler için verimli ders çalışma teknikleri, dönemlik stratejiler, deneme analizleri ve interaktif haftalık ders programı oluşturucu...</p>
-            <button class="read-more-btn" onclick="openDetailPage('akademik')">Detaylı Oku & Sayfaya Git &rarr;</button>
-        </article>
-
-        <article>
             <h3>Öfke Kontrolü ve Sağlıklı İletişim</h3>
-            <p>Öfke, tıpkı sevinç ve üzüntü gibi doğal bir duygudur. Önemli olan öfkeyi bastırmak değil, onu "Ben Dili" kullanarak sağlıklı ifade edebilmektir...</p>
+            <p>Öfke, tıpkı sevinç ve üzüntü gibi doğal bir duygudur. Önemli olan onu "Ben Dili" kullanarak sağlıklı ifade edebilmektir...</p>
             <button class="read-more-btn" onclick="openDetailPage('ofke')">Detaylı Oku & Sayfaya Git &rarr;</button>
         </article>
     </section>
@@ -494,98 +494,108 @@
     </footer>
 
     <script>
-        // ZENGİN VE AKADEMİK İÇERİKLER
+        // BİLİMSEL VE PSİKOLOJİK TEORİLERLE ZENGİNLEŞTİRİLMİŞ İÇERİKLER
         const articleDetails = {
-            stres: {
-                title: "Stres Yönetimi ve Başa Çıkma Yolları: Derinlemesine Rehber",
+            lgs_yks: {
+                title: "LGS & YKS Sınav Kaygısı, Stres Yönetimi ve Verimli Çalışma Kılavuzu",
                 content: `
-                    <p>Stres, organizmanın fizyolojik ve psikolojik dengesini tehdit eden zorlayıcı uyarılara karşı verdiği biyolojik bir uyum tepkisidir. Optimal düzeydeki stres (Östres), bireyin performansını artırır ve motivasyonu canlı tutar. Ancak kronikleşen stres bağışıklığı ve odaklanmayı düşürür.</p>
-                    <h3>1. Bilişsel Yeniden Yapılandırma</h3>
-                    <p>Olaylara yüklediğimiz anlamları gözden geçirmek; felaketleştirme veya ya hep ya hiç tarzı olumsuz düşünce kalıplarını fark edip rasyonel düşüncelerle değiştirmek esastır.</p>
-                    <h3>2. Fizyolojik Sakinleşme: Diyafram Nefesi</h3>
-                    <p>Burundan 4 saniye nefes alıp, 4 saniye tutup, 6 saniyede vererek parasempatik sinir sistemini aktif hale getirebilirsiniz.</p>
-                `
-            },
-            kaygi: {
-                title: "Sınav Kaygısı Nedir, Neden Olur ve Nasıl Yönetilir?",
-                content: `
-                    <p>Sınav kaygısı, sınav öncesinde veya sırasında yaşanan, bilginin transferini engelleyen yoğun bir uyarılmışlık durumudur.</p>
-                    
-                    <h3>Neden Olur? (Tetikleyiciler)</h3>
+                    <p>LGS ve YKS süreçleri, öğrencilerin yalnızca akademik bilgilerini değil; aynı zamanda psikolojik dayanıklılıklarını ve stresle başa çıkma becerilerini sınayan dönüm noktalarıdır. Bu süreçte yaşanan kaygı, bireyin potansiyelini tam olarak yansıtmasını engelleyebilir.</p>
+
+                    <h3>1. Psikolojik Kuramlar Işığında Sınav Kaygısı</h3>
+                    <p><strong>Aaron Beck’in Bilişsel Modeli:</strong> Kaygı, olayın kendisinden değil, bireyin olaya yüklediği irrasyonel inançlardan kaynaklanır. "Sınavı kazanamazsam değersiz bir insan olurum" veya "Her şeyi kusursuz bilmeliyim" şeklindeki otomatik düşünceler kaygıyı doruğa çıkarır.</p>
+                    <p><strong>Albert Bandura’nın Öz-Yeterlilik (Self-Efficacy) Kuramı:</strong> Öğrencinin "Ben bu konuyu öğrenebilirim ve başarabilirim" inancı ne kadar yüksekse, sınav anındaki kaygı düzeyi o kadar düşük olur ve performans o kadar artar.</p>
+
+                    <h3>2. Bilimsel Temelli En Az 3 Verimli Çalışma Taktiği</h3>
                     <ul>
-                        <li><strong>Mükemmeliyetçilik:</strong> "Hata yapmamalıyım, her şeyi kusursuz bilmeliyim" düşüncesi.</li>
-                        <li><strong>Olumsuz İç Konuşmalar:</strong> "Başaramayacağım, ailemi utandıracağım" gibi zihinsel senaryolar.</li>
-                        <li><strong>Zaman Baskısı ve Yetersiz Hazırlık Hissi:</strong> Konuların yetişmeyeceği korkusu.</li>
+                        <li><strong>Pomodoro Tekniği:</strong> Beynin odaklanma süresini verimli kullanmak için 25 dakika kesintisiz çalışma + 5 dakika dinlenme döngüsüdür. Zihinsel tükenmişliği önler.</li>
+                        <li><strong>Aktif Hatırlama (Active Recall):</strong> Pasif okuma yerine, çalıştıktan hemen sonra kitabı kapatıp öğrenilenleri boş bir kağıda şematize ederek hatırlamaya çalışmaktır. Bilgiyi kalıcı hafızaya taşır.</li>
+                        <li><strong>Feynman Tekniği:</strong> Karmaşık bir konuyu hiç bilmeyen birine anlatır gibi sadeleştirerek ifade etmektir. Eksik öğrenilen yerleri anında görmeyi sağlar.</li>
                     </ul>
 
-                    <h3>Nasıl Baş Edilir?</h3>
                     <div class="highlight-box">
-                        <strong>5-4-3-2-1 Topraklanma Tekniği:</strong> Sınav anında panik basarsa etrafınızda 5 nesne, 4 doku, 3 ses, 2 koku ve 1 tat bularak zihninizi şimdiki ana getirin.
+                        <strong>Sınav Anı İçin Topraklanma Egzersizi (5-4-3-2-1):</strong> Sınavda panik anı geldiğinde çevrenizdeki 5 nesneye, 4 dokuya, 3 sese, 2 kokuya ve 1 tada odaklanarak zihninizi şimdiki ana sabitleyin.
                     </div>
-                `
-            },
-            akademik: {
-                title: "LGS ve YKS Dönemi Akademik Rehberlik & Çalışma Programları",
-                content: `
-                    <p>LGS ve YKS uzun soluklu bir maratondur. Bu süreçte sadece çok çalışmak değil, <strong>akıllı ve stratejik çalışmak</strong> başarıyı getirir.</p>
-
-                    <h3>1. Verimli Çalışma Taktikleri ve Pomodoro</h3>
-                    <p>25 dakika tam odaklanma + 5 dakika mola döngüsüyle zihni yormadan maksimum verim alabilirsiniz. Günün sonunda mutlaka o gün çözülen soruların analizini yapın.</p>
-
-                    <h3>2. LGS ve YKS Öğrencilerine Özel Dönem Stratejileri</h3>
-                    <ul>
-                        <li><strong>Temel Atma Dönemi:</strong> Eksik konu bırakmama ve kavramları netleştirme.</li>
-                        <li><strong>Soru Çözüm & Deneme Dönemi:</strong> Zaman yönetimi ve yanlış analizi (Her yanlış, öğrenilmemiş yeni bir konudur).</li>
-                        <li><strong>Son Viraj:</strong> Genel denemeler ve biyolojik saati sınav saatine sabitleme.</li>
-                    </ul>
 
                     <div class="quote-box">
-                        "Bugün yaptığın fedakarlıklar, yarın elde edeceğin başarının temelidir. Asla pes etme!"
+                        "Başarı, doğru stratejilerle atılan küçük ama kararlı adımların toplamıdır."
                     </div>
 
                     <h3>🗓️ İnteraktif Haftalık Ders Programı Oluşturucu</h3>
-                    <p>Aşağıdaki alana kendi haftalık ders hedeflerini yazarak kendi programını tasarlayabilir ve planlı çalışabilirsin:</p>
+                    <p>Kendi çalışma hedeflerini planlayarak bu dönemi en verimli şekilde yönetebilirsin:</p>
 
                     <div class="planner-container">
-                        <h3 style="margin-top:0; color:#2c3e50;">Haftalık Çalışma Planım</h3>
+                        <h3 style="margin-top:0; color:#2c3e50;">Haftalık Akademik Hedef Planım</h3>
                         <div class="planner-grid">
                             <div class="day-box">
                                 <h4>Pazartesi</h4>
-                                <textarea placeholder="Örn: Paragraf + Matematik Konu"></textarea>
+                                <textarea placeholder="Örn: Paragraf + Matematik Konu Çalışması"></textarea>
                             </div>
                             <div class="day-box">
                                 <h4>Salı</h4>
-                                <textarea placeholder="Örn: Fen / Fizik + Türkçe Deneme"></textarea>
+                                <textarea placeholder="Örn: Fen Bilimleri / Fizik + Türkçe Deneme"></textarea>
                             </div>
                             <div class="day-box">
                                 <h4>Çarşamba</h4>
-                                <textarea placeholder="Örn: Sosyal / Kimya + Soru Çözümü"></textarea>
+                                <textarea placeholder="Örn: Sosyal Bilgiler / Kimya + Soru Çözümü"></textarea>
                             </div>
                             <div class="day-box">
                                 <h4>Perşembe</h4>
-                                <textarea placeholder="Örn: Geometri + Biyoloji Tekrarı"></textarea>
+                                <textarea placeholder="Örn: Geometri Soru Bankası + Biyoloji Tekrarı"></textarea>
                             </div>
                             <div class="day-box">
                                 <h4>Cuma</h4>
-                                <textarea placeholder="Örn: Genel Deneme + Yanlış Analizi"></textarea>
+                                <textarea placeholder="Örn: Genel Deneme Sınavı ve Yanlış Analizi"></textarea>
                             </div>
                             <div class="day-box">
                                 <h4>Hafta Sonu</h4>
-                                <textarea placeholder="Örn: Branş Denemeleri + Dinlenme"></textarea>
+                                <textarea placeholder="Örn: Eksik Konu Tekrarı + Dinlenme & Yürüyüş"></textarea>
                             </div>
                         </div>
-                        <button class="planner-btn" onclick="alert('Haftalık programınız başarıyla kaydedildi! Başarılar dileriz!')">Programı Kaydet</button>
+                        <button class="planner-btn" onclick="alert('Haftalık ders programınız başarıyla oluşturuldu! Başarılar dileriz!')">Programı Kaydet</button>
                     </div>
+                `
+            },
+            yetiskin_ebeveyn: {
+                title: "Yetişkinler ve Ebeveynler İçin Psikolojik Rehberlik ve Stres Yönetimi",
+                content: `
+                    <p>Yetişkinlik dönemi; mesleki sorumluluklar, aile kurma, ekonomik baskılar ve ebeveynlik rolleri nedeniyle yoğun stres kaynakları barındırır. Çocuk sahibi olmak veya iş hayatına atılmak bireylerde hem gelişimsel fırsatlar hem de psikolojik krizler doğurabilir.</p>
+
+                    <h3>1. Psikolojik Kuramlar Işığında Yetişkinlik Krizleri</h3>
+                    <p><strong>Erik Erikson’ın Psikososyal Gelişim Kuramı:</strong> Yetişkinlik dönemi, <em>"Üretkenliğe Karşı Durgunluk"</em> evresini kapsar. Birey, topluma, yeni nesillere ve işine değer katabildiğini hissettiğinde üretkenlik duygusu gelişir; aksi takdirde sıkışmışlık ve durgunluk hissi yaşar.</p>
+                    <p><strong>Carl Rogers’ın Danışan Merkezli Yaklaşımı ve Koşulsuz Kabul:</strong> Ebeveynlerin çocuklarına ve yetişkinlerin kendi öz benliklerine karşı gösterdiği mükemmeliyetçi baskı psikolojik sağlığı zedeler. Koşulsuz kabul, bireyin hatalarıyla birlikte değerli olduğunu hissetmesiyle başlar.</p>
+
+                    <h3>2. Ebeveynlik Tükenmişliği (Parental Burnout) Nedir?</h3>
+                    <p>Çocuğun gelişimini desteklerken ebeveynin kendi öz bakımını ihmal etmesi durumunda kronik yorgunluk, duygusal tükenme ve yetersizlik hissi ortaya çıkar.</p>
+                    <ul>
+                        <li><strong>Sınır Koyma Becerisi:</strong> Hem iş yerinde hem aile içinde "Hayır" diyebilmek ruh sağlığının kalkanıdır.</li>
+                        <li><strong>Suçluluk Duygusuyla Başa Çıkma:</strong> "Mükemmel ebeveyn" yoktur; "yeterince iyi ebeveyn" vardır (D. Winnicott). Hata yapmak insidir ve gelişimin parçasıdır.</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>İletişimde 'Ben Dili' Kullanımı:</strong> "Sen hiçbir zaman bana yardım etmiyorsun" yerine, "Ev işlerinin yükü arttığında kendimi çok yorgun hissediyorum (Duygu), biraz desteğe ihtiyacım var (İhtiyaç)" diyerek sağlıklı iletişim kurun.
+                    </div>
+
+                    <div class="quote-box">
+                        "Kendine şefkat göstermeyen bir ebeveyn, çocuğuna da tükenmişlikten başka bir şey sunamaz."
+                    </div>
+                `
+            },
+            stres: {
+                title: "Stres Yönetimi ve Başa Çıkma Yolları",
+                content: `
+                    <p>Stres, organizmanın fizyolojik ve psikolojik dengesini tehdit eden uyarılara karşı verdiği uyum tepkisidir. Optimal düzeydeki stres performans artırırken, kronikleşen stres tükenmişlik yaratır.</p>
+                    <h3>1. Fizyolojik Sakinleşme: Diyafram Nefesi</h3>
+                    <p>Burundan 4 saniye nefes alıp, 4 saniye tutup, 6 saniyede vererek parasempatik sinir sistemini aktif hale getirebilirsiniz.</p>
+                    <h3>2. Bilişsel Yeniden Yapılandırma</h3>
+                    <p>Olaylara yüklediğimiz anlamları gözden geçirmek ve rasyonel olmayan inançları esnetmek stresi azaltır.</p>
                 `
             },
             ofke: {
                 title: "Öfke Kontrolü ve Sağlıklı İletişim",
                 content: `
-                    <p>Öfke temel bir insani duygudur; problem olan öfkenin kendisi değil, dışa vurum şeklidir.</p>
-                    <h3>1. 'Ben Dili' Kullanımı</h3>
-                    <p>"Sen beni dinlemiyorsun" yerine "Konuşurken dinlenmediğimi hissettiğimde üzülüyorum" diyerek duygunuzu ifade edin.</p>
-                    <h3>2. Mola Alma (Time-Out)</h3>
-                    <p>Tartışma anında nabız yükseldiğinde 15 dakika mola verip ortamdan uzaklaşmak ilişkiyi korur.</p>
+                    <p>Öfke temel bir duygudur. Önemli olan öfkeyi bastırmak değil, onu "Ben Dili" kullanarak sağlıklı ifade etmektir.</p>
+                    <h3>1. Mola Alma (Time-Out)</h3>
+                    <p>Nabız yükseldiğinde tartışmadan uzaklaşıp 15 dakika sakinleşmek ilişkiyi korur.</p>
                 `
             }
         };
