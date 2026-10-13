@@ -13,7 +13,6 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            scroll-behavior: smooth;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -54,12 +53,9 @@
             background-color: rgba(255, 255, 255, 0.08);
         }
 
-        /* Sayfa Bölümleri Yönetimi */
+        /* Sayfa Bölümleri */
         .page-section {
             display: none;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
             max-width: 900px;
             margin: 30px auto;
             padding: 0 20px;
@@ -70,8 +66,6 @@
 
         .page-section.active {
             display: block;
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* HERO KAPAĞI (ANA SAYFA) */
@@ -111,14 +105,13 @@
             font-weight: 600;
             font-size: 1rem;
             cursor: pointer;
-            text-decoration: none;
+            border: none;
             transition: all 0.3s ease;
         }
 
         .hero-btn-primary {
             background-color: #ffffff;
             color: #2c3e50;
-            border: none;
         }
 
         .hero-btn-primary:hover {
@@ -150,6 +143,14 @@
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
             text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #3498db;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.15);
         }
 
         .feature-item h3 {
@@ -166,7 +167,7 @@
             margin-bottom: 25px;
         }
 
-        /* REHBERLİK YAZILARI KARTLARI */
+        /* YAZI KARTLARI */
         article {
             background: white;
             padding: 25px;
@@ -174,12 +175,11 @@
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             border-left: 5px solid #3498db;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         article:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.15);
         }
 
         article h3 {
@@ -198,15 +198,14 @@
             font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
+            transition: background 0.3s;
         }
 
         .read-more-btn:hover {
             background-color: #2980b9;
-            transform: translateX(3px);
         }
 
-        /* BİLGİ VE MİSYON KUTULARI */
+        /* BİLGİ KUTULARI */
         .info-card {
             background: white;
             padding: 30px;
@@ -268,7 +267,7 @@
             background-color: #2980b9;
         }
 
-        /* DETAY SAYFASI GÖRÜNÜMÜ */
+        /* DETAY BUTTON */
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -281,7 +280,6 @@
             font-weight: 600;
             cursor: pointer;
             margin-bottom: 25px;
-            transition: background 0.2s;
         }
 
         .back-btn:hover {
@@ -314,7 +312,7 @@
             border-radius: 0 8px 8px 0;
         }
 
-        /* ALT BİLGİ */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 25px;
@@ -336,7 +334,7 @@
         </ul>
     </nav>
 
-    <!-- 1. ANA SAYFA (SİTE KAPAĞI VE GİRİŞ) -->
+    <!-- 1. ANA SAYFA -->
     <section id="page-home" class="page-section active">
         <div class="hero-card">
             <h1>Psikolojik Danışmanlık ve Rehberlik Portalı</h1>
@@ -348,25 +346,25 @@
         </div>
 
         <div class="features-grid">
-            <div class="feature-item">
+            <div class="feature-item" onclick="navigateTo('yazilar')">
                 <div style="font-size: 2.5rem;">🌱</div>
                 <h3>Bilişsel & Duygusal Gelişim</h3>
-                <p>Bireysel farkındalığı artıran, bilimsel PDR literatürüne dayalı güncel içerikler.</p>
+                <p>Bireysel farkındalığı artıran, bilimsel PDR literatürüne dayalı güncel içerikler. (Tıkla & Oku)</p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item" onclick="navigateTo('yazilar')">
                 <div style="font-size: 2.5rem;">🎯</div>
                 <h3>Akademik Rehberlik</h3>
-                <p>Verimli ders çalışma, kaygı yönetimi ve zaman planlama stratejileri.</p>
+                <p>Verimli ders çalışma, kaygı yönetimi ve zaman planlama stratejileri. (Tıkla & Oku)</p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item" onclick="navigateTo('hakkimda')">
                 <div style="font-size: 2.5rem;">🤝</div>
                 <h3>Etik Danışmanlık</h3>
-                <p>Koşulsuz kabul, empatik anlayış ve gizlilik ilkeleriyle hazırlanan rehberlik anlayışı.</p>
+                <p>Koşulsuz kabul, empatik anlayış ve gizlilik ilkeleriyle hazırlanan rehberlik anlayışı. (Tıkla & Oku)</p>
             </div>
         </div>
     </section>
 
-    <!-- 2. REHBERLİK YAZILARI SAYFASI -->
+    <!-- 2. REHBERLİK YAZILARI -->
     <section id="page-yazilar" class="page-section">
         <h2 class="section-title">📚 Rehberlik & Psikoloji Yazıları</h2>
         
@@ -384,7 +382,7 @@
 
         <article>
             <h3>Öfke Kontrolü ve Sağlıklı İletişim</h3>
-            <p>Öfke, tıpkı sevinch ve üzüntü gibi doğal bir duygudur. Önemli olan öfkeyi bastırmak değil, onu "Ben Dili" kullanarak sağlıklı ifade edebilmektir...</p>
+            <p>Öfke, tıpkı sevinç ve üzüntü gibi doğal bir duygudur. Önemli olan öfkeyi bastırmak değil, onu "Ben Dili" kullanarak sağlıklı ifade edebilmektir...</p>
             <button class="read-more-btn" onclick="openDetailPage('ofke')">Detaylı Oku & Sayfaya Git &rarr;</button>
         </article>
 
@@ -395,8 +393,128 @@
         </article>
     </section>
 
-    <!-- 3. HAKKIMDA & MİSYONUMUZ SAYFASI -->
+    <!-- 3. HAKKIMDA & MİSYONUMUZ -->
     <section id="page-hakkimda" class="page-section">
         <h2 class="section-title">👤 Hakkımda</h2>
         <div class="info-card">
-            <p>Merhaba, ben <strong>
+            <p>Merhaba, ben <strong>Mehmet Eren Haşlama</strong>. Akdeniz Üniversitesi Rehberlik ve Psikolojik Danışmanlık (PDR) alanındaki akademik altyapım ve saha deneyimlerimle psikolojik danışmanlık süreçlerine katkı sunmaktayım.</p>
+            <p>Bireysel psikolojik danışma süreçlerinde; etik ilkelere bağlılık, koşulsuz kabul, empatik anlayış ve gizlilik esaslarına dayanarak bireylerin kendilerini daha iyi tanımalarını ve potansiyellerine ulaşmalarını destekliyorum.</p>
+        </div>
+
+        <h2 class="section-title">🎯 Misyonumuz</h2>
+        <div class="info-card">
+            <p>Bu platformun temel kuruluş amacı; psikoloji ve rehberlik alanındaki bilimsel ve etik bilgiyi herkes için anlaşılır, güvenilir ve erişilebilir kılmaktır. Bu doğrultuda misyonumuz:</p>
+            <ul class="mission-list">
+                <li><strong>Özfarkındalık Kazandırmak:</strong> Bireylerin duygu, düşünce ve davranışlarını daha sağlıklı değerlendirmelerine rehberlik etmek.</li>
+                <li><strong>Koruyucu Ruh Sağlığı Hizmeti:</strong> Psikolojik dayanıklılığı artırarak sorunlar ortaya çıkmadan önce önleyici bilgilendirme sunmak.</li>
+                <li><strong>Akademik ve Kişisel Gelişim:</strong> Öğrencilere verimli çalışma, kaygı yönetimi ve kariyer planlama süreçlerinde bilimsel kaynak sağlamak.</li>
+                <li><strong>Etik İlkelerden Ödün Vermemek:</strong> Tüm yayın ve bilgilendirmelerde Rehberlik ve Psikolojik Danışmanlık etik standartlarına sadık kalmak.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. İLETİŞİM -->
+    <section id="page-iletisim" class="page-section">
+        <h2 class="section-title">✉️ Bize Ulaşın / Soru Sorun</h2>
+        <div class="info-card contact-form">
+            <form action="#" method="post" onsubmit="alert('Mesajınız alındı!'); return false;">
+                <label for="name">Adınız Soyadınız:</label>
+                <input type="text" id="name" name="name" placeholder="Örn: Ahmet Yılmaz" required>
+
+                <label for="email">E-posta Adresiniz:</label>
+                <input type="email" id="email" name="email" placeholder="Örn: ahmet@example.com" required>
+
+                <label for="message">Mesajınız / Sorunuz:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Danışmak istediğiniz konuyu yazabilirsiniz..." required></textarea>
+
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 5. DETAY SAYFASI -->
+    <section id="page-detail" class="page-section">
+        <button class="back-btn" onclick="navigateTo('yazilar')">← Tüm Yazılara Dön</button>
+        <div id="detailContainer" class="detail-content info-card">
+            <!-- İçerik JS ile doldurulacak -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mehmet Eren Haşlama - PDR Bilgi Servisi. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        const articleDetails = {
+            stres: {
+                title: "Stres Yönetimi ve Başa Çıkma Yolları: Derinlemesine Rehber",
+                content: `
+                    <p>Stres, organizmanın fizyolojik ve psikolojik dengesini tehdit eden zorlayıcı uyarılara karşı verdiği biyolojik bir uyum tepkisidir. Optimal düzeydeki stres (Östres), bireyin performansını artırır ve motivasyonu canlı tutar.</p>
+                    <h3>1. Bilişsel Yeniden Yapılandırma</h3>
+                    <p>Stres tepkisini belirleyen temel unsur olayın kendisi değil, olaya verilen zihinsel anlamdır. Felaketleştirme veya ya hep ya hiç düşüncelerinden uzaklaşmak gerekir.</p>
+                    <h3>2. Fizyolojik Sakinleşme: Diyafram Nefesi</h3>
+                    <p>Burundan 4 saniye nefes alıp, 4 saniye tutup, 6 saniyede vererek parasempatik sinir sistemini aktif hale getirebilirsiniz.</p>
+                `
+            },
+            kaygi: {
+                title: "Sınav Kaygısı ve Performans Yönetimi",
+                content: `
+                    <p>Sınav kaygısı, öğrenilen bilginin değerlendirilmesi sürecinde yaşanan, bireyin potansiyelini sergilemesini engelleyen durumdur.</p>
+                    <h3>1. Sınav Anında Panik Yönetimi (5-4-3-2-1 Tekniği)</h3>
+                    <p>Çevrenizdeki 5 nesneye, 4 dokuya, 3 sese, 2 kokuya ve 1 tada odaklanarak zihninizi ana getirebilirsiniz.</p>
+                `
+            },
+            ofke: {
+                title: "Öfke Kontrolü ve İletişim",
+                content: `
+                    <p>Öfke doğal bir duygudur. Önemli olan bunu 'Ben Dili' kullanarak doğru ifade edebilmektir.</p>
+                    <h3>1. 'Ben Dili' Kullanımı</h3>
+                    <p>"Sen beni dinlemiyorsun" yerine "Konuşurken dinlenmediğimi hissettiğimde üzülüyorum" demek iletişimi kurtarır.</p>
+                `
+            },
+            ders: {
+                title: "Verimli Ders Çalışma Teknikleri",
+                content: `
+                    <p>Çalışma süresinin uzunluğu değil, odaklanma seviyesi başarıyı getirir.</p>
+                    <h3>1. Pomodoro Tekniği</h3>
+                    <p>25 dakika odaklanmış çalışma + 5 dakika kısa mola döngüsü zihni taze tutar.</p>
+                `
+            }
+        };
+
+        function navigateTo(pageId) {
+            // Tüm bölümleri gizle
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Menü aktifliğini ayarla
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            const activeNav = document.getElementById(`nav-${pageId}`);
+            if (activeNav) activeNav.classList.add('active');
+
+            // İlgili bölümü göster
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openDetailPage(key) {
+            const data = articleDetails[key];
+            if (!data) return;
+
+            document.getElementById('detailContainer').innerHTML = `
+                <h2>${data.title}</h2>
+                ${data.content}
+            `;
+
+            navigateTo('detail');
+        }
+    </script>
+
+</body>
+</html>
