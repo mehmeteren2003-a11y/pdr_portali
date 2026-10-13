@@ -35,6 +35,7 @@
             display: flex;
             justify-content: center;
             gap: 25px;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -56,7 +57,7 @@
         /* Sayfa Bölümleri */
         .page-section {
             display: none;
-            max-width: 900px;
+            max-width: 950px;
             margin: 30px auto;
             padding: 0 20px;
             flex: 1;
@@ -205,7 +206,7 @@
             background-color: #2980b9;
         }
 
-        /* BİLGİ KUTULARI */
+        /* BİLGİ KUTULARI VE İNTERAKTİF ARAÇLAR */
         .info-card {
             background: white;
             padding: 30px;
@@ -214,30 +215,82 @@
             margin-bottom: 25px;
         }
 
-        .mission-list {
-            list-style-type: none;
-            padding: 0;
+        .highlight-box {
+            background: #f8fbfe;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
         }
 
-        .mission-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 30px;
-            font-size: 1.05rem;
+        .quote-box {
+            background: linear-gradient(135deg, #e8f4fd, #f4f8fb);
+            border: 2px dashed #3498db;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-style: italic;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin: 20px 0;
         }
 
-        .mission-list li::before {
-            content: "✓";
-            color: #3498db;
+        /* HAFTALIK PROGRAM OLUŞTURUCU WIDGET */
+        .planner-container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            margin-top: 30px;
+            border: 1px solid #e1e8ed;
+        }
+
+        .planner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .day-box {
+            background: #f9fbfc;
+            border: 1px solid #dcdde1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .day-box h4 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .day-box textarea {
+            width: 100%;
+            height: 90px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        .planner-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
             font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
         }
 
-        .mission-list li:last-child {
-            border-bottom: none;
+        .planner-btn:hover {
+            background-color: #219653;
         }
 
         /* İLETİŞİM FORM */
@@ -267,7 +320,7 @@
             background-color: #2980b9;
         }
 
-        /* DETAY BUTTON */
+        /* DETAY BUTON */
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -304,14 +357,6 @@
             line-height: 1.8;
         }
 
-        .highlight-box {
-            background: #f8fbfe;
-            border-left: 4px solid #3498db;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
         /* FOOTER */
         footer {
             text-align: center;
@@ -345,21 +390,25 @@
             </div>
         </div>
 
+        <div class="quote-box">
+            "Başarı, her gün tekrarlanan küçük çabaların ve doğru stratejilerin toplamıdır." — PDR Birimi
+        </div>
+
         <div class="features-grid">
             <div class="feature-item" onclick="navigateTo('yazilar')">
-                <div style="font-size: 2.5rem;">🌱</div>
-                <h3>Bilişsel & Duygusal Gelişim</h3>
-                <p>Bireysel farkındalığı artıran, bilimsel PDR literatürüne dayalı güncel içerikler. (Tıkla & Oku)</p>
+                <div style="font-size: 2.5rem;">🎯</div>
+                <h3>LGS & YKS Akademik Rehberlik</h3>
+                <p>Sınav dönemine özel çalışma programları, verimli ders taktikleri ve motivasyon araçları. (Tıkla & İncele)</p>
             </div>
             <div class="feature-item" onclick="navigateTo('yazilar')">
-                <div style="font-size: 2.5rem;">🎯</div>
-                <h3>Akademik Rehberlik</h3>
-                <p>Verimli ders çalışma, kaygı yönetimi ve zaman planlama stratejileri. (Tıkla & Oku)</p>
+                <div style="font-size: 2.5rem;">🧠</div>
+                <h3>Sınav Kaygısı & Stres Yönetimi</h3>
+                <p>Kaygının kaynakları, fizyolojik tetikleyiciler ve başa çıkma stratejileri. (Tıkla & İncele)</p>
             </div>
             <div class="feature-item" onclick="navigateTo('hakkimda')">
                 <div style="font-size: 2.5rem;">🤝</div>
-                <h3>Etik Danışmanlık</h3>
-                <p>Koşulsuz kabul, empatik anlayış ve gizlilik ilkeleriyle hazırlanan rehberlik anlayışı. (Tıkla & Oku)</p>
+                <h3>Etik Danışmanlık İlkeleri</h3>
+                <p>Koşulsuz kabul, empatik yaklaşım ve gizlilik esasına dayalı rehberlik hizmeti. (Tıkla & İncele)</p>
             </div>
         </div>
     </section>
@@ -375,21 +424,21 @@
         </article>
 
         <article>
-            <h3>Sınav Kaygısı Nedir ve Nasıl Yönetilir?</h3>
-            <p>Sınav öncesinde hissedilen hafif kaygı doğaldır ve odaklanmayı artırır. Ancak kaygı düzeyi performansı düşürmeye başladığında doğru teknikler devreye girmelidir...</p>
+            <h3>Sınav Kaygısı Nedir, Neden Olur ve Nasıl Yönetilir?</h3>
+            <p>Sınav öncesinde hissedilen hafif kaygı doğaldır ve odaklanmayı artırır. Ancak kaygı düzeyi performansı düşürmeye başladığında derinlemesine teknikler devreye girmelidir...</p>
             <button class="read-more-btn" onclick="openDetailPage('kaygi')">Detaylı Oku & Sayfaya Git &rarr;</button>
+        </article>
+
+        <article>
+            <h3>LGS ve YKS Dönemi Akademik Rehberlik & Çalışma Programları</h3>
+            <p>Sınava hazırlanan öğrenciler için verimli ders çalışma teknikleri, dönemlik stratejiler, deneme analizleri ve interaktif haftalık ders programı oluşturucu...</p>
+            <button class="read-more-btn" onclick="openDetailPage('akademik')">Detaylı Oku & Sayfaya Git &rarr;</button>
         </article>
 
         <article>
             <h3>Öfke Kontrolü ve Sağlıklı İletişim</h3>
             <p>Öfke, tıpkı sevinç ve üzüntü gibi doğal bir duygudur. Önemli olan öfkeyi bastırmak değil, onu "Ben Dili" kullanarak sağlıklı ifade edebilmektir...</p>
             <button class="read-more-btn" onclick="openDetailPage('ofke')">Detaylı Oku & Sayfaya Git &rarr;</button>
-        </article>
-
-        <article>
-            <h3>Verimli Ders Çalışma Teknikleri (Pomodoro & Bilişsel Haritalar)</h3>
-            <p>Saatlerce masada oturmak verimli çalıştığınız anlamına gelmez. Zihni dinlendirerek odaklanmayı sağlayan tekniklerle başarıyı artırabilirsiniz...</p>
-            <button class="read-more-btn" onclick="openDetailPage('ders')">Detaylı Oku & Sayfaya Git &rarr;</button>
         </article>
     </section>
 
@@ -404,7 +453,7 @@
         <h2 class="section-title">🎯 Misyonumuz</h2>
         <div class="info-card">
             <p>Bu platformun temel kuruluş amacı; psikoloji ve rehberlik alanındaki bilimsel ve etik bilgiyi herkes için anlaşılır, güvenilir ve erişilebilir kılmaktır. Bu doğrultuda misyonumuz:</p>
-            <ul class="mission-list">
+            <ul style="padding-left: 20px; line-height: 1.8;">
                 <li><strong>Özfarkındalık Kazandırmak:</strong> Bireylerin duygu, düşünce ve davranışlarını daha sağlıklı değerlendirmelerine rehberlik etmek.</li>
                 <li><strong>Koruyucu Ruh Sağlığı Hizmeti:</strong> Psikolojik dayanıklılığı artırarak sorunlar ortaya çıkmadan önce önleyici bilgilendirme sunmak.</li>
                 <li><strong>Akademik ve Kişisel Gelişim:</strong> Öğrencilere verimli çalışma, kaygı yönetimi ve kariyer planlama süreçlerinde bilimsel kaynak sağlamak.</li>
@@ -417,7 +466,7 @@
     <section id="page-iletisim" class="page-section">
         <h2 class="section-title">✉️ Bize Ulaşın / Soru Sorun</h2>
         <div class="info-card contact-form">
-            <form action="#" method="post" onsubmit="alert('Mesajınız alındı!'); return false;">
+            <form action="#" method="post" onsubmit="alert('Mesajınız başarıyla iletildi!'); return false;">
                 <label for="name">Adınız Soyadınız:</label>
                 <input type="text" id="name" name="name" placeholder="Örn: Ahmet Yılmaz" required>
 
@@ -445,56 +494,112 @@
     </footer>
 
     <script>
+        // ZENGİN VE AKADEMİK İÇERİKLER
         const articleDetails = {
             stres: {
                 title: "Stres Yönetimi ve Başa Çıkma Yolları: Derinlemesine Rehber",
                 content: `
-                    <p>Stres, organizmanın fizyolojik ve psikolojik dengesini tehdit eden zorlayıcı uyarılara karşı verdiği biyolojik bir uyum tepkisidir. Optimal düzeydeki stres (Östres), bireyin performansını artırır ve motivasyonu canlı tutar.</p>
+                    <p>Stres, organizmanın fizyolojik ve psikolojik dengesini tehdit eden zorlayıcı uyarılara karşı verdiği biyolojik bir uyum tepkisidir. Optimal düzeydeki stres (Östres), bireyin performansını artırır ve motivasyonu canlı tutar. Ancak kronikleşen stres bağışıklığı ve odaklanmayı düşürür.</p>
                     <h3>1. Bilişsel Yeniden Yapılandırma</h3>
-                    <p>Stres tepkisini belirleyen temel unsur olayın kendisi değil, olaya verilen zihinsel anlamdır. Felaketleştirme veya ya hep ya hiç düşüncelerinden uzaklaşmak gerekir.</p>
+                    <p>Olaylara yüklediğimiz anlamları gözden geçirmek; felaketleştirme veya ya hep ya hiç tarzı olumsuz düşünce kalıplarını fark edip rasyonel düşüncelerle değiştirmek esastır.</p>
                     <h3>2. Fizyolojik Sakinleşme: Diyafram Nefesi</h3>
                     <p>Burundan 4 saniye nefes alıp, 4 saniye tutup, 6 saniyede vererek parasempatik sinir sistemini aktif hale getirebilirsiniz.</p>
                 `
             },
             kaygi: {
-                title: "Sınav Kaygısı ve Performans Yönetimi",
+                title: "Sınav Kaygısı Nedir, Neden Olur ve Nasıl Yönetilir?",
                 content: `
-                    <p>Sınav kaygısı, öğrenilen bilginin değerlendirilmesi sürecinde yaşanan, bireyin potansiyelini sergilemesini engelleyen durumdur.</p>
-                    <h3>1. Sınav Anında Panik Yönetimi (5-4-3-2-1 Tekniği)</h3>
-                    <p>Çevrenizdeki 5 nesneye, 4 dokuya, 3 sese, 2 kokuya ve 1 tada odaklanarak zihninizi ana getirebilirsiniz.</p>
+                    <p>Sınav kaygısı, sınav öncesinde veya sırasında yaşanan, bilginin transferini engelleyen yoğun bir uyarılmışlık durumudur.</p>
+                    
+                    <h3>Neden Olur? (Tetikleyiciler)</h3>
+                    <ul>
+                        <li><strong>Mükemmeliyetçilik:</strong> "Hata yapmamalıyım, her şeyi kusursuz bilmeliyim" düşüncesi.</li>
+                        <li><strong>Olumsuz İç Konuşmalar:</strong> "Başaramayacağım, ailemi utandıracağım" gibi zihinsel senaryolar.</li>
+                        <li><strong>Zaman Baskısı ve Yetersiz Hazırlık Hissi:</strong> Konuların yetişmeyeceği korkusu.</li>
+                    </ul>
+
+                    <h3>Nasıl Baş Edilir?</h3>
+                    <div class="highlight-box">
+                        <strong>5-4-3-2-1 Topraklanma Tekniği:</strong> Sınav anında panik basarsa etrafınızda 5 nesne, 4 doku, 3 ses, 2 koku ve 1 tat bularak zihninizi şimdiki ana getirin.
+                    </div>
+                `
+            },
+            akademik: {
+                title: "LGS ve YKS Dönemi Akademik Rehberlik & Çalışma Programları",
+                content: `
+                    <p>LGS ve YKS uzun soluklu bir maratondur. Bu süreçte sadece çok çalışmak değil, <strong>akıllı ve stratejik çalışmak</strong> başarıyı getirir.</p>
+
+                    <h3>1. Verimli Çalışma Taktikleri ve Pomodoro</h3>
+                    <p>25 dakika tam odaklanma + 5 dakika mola döngüsüyle zihni yormadan maksimum verim alabilirsiniz. Günün sonunda mutlaka o gün çözülen soruların analizini yapın.</p>
+
+                    <h3>2. LGS ve YKS Öğrencilerine Özel Dönem Stratejileri</h3>
+                    <ul>
+                        <li><strong>Temel Atma Dönemi:</strong> Eksik konu bırakmama ve kavramları netleştirme.</li>
+                        <li><strong>Soru Çözüm & Deneme Dönemi:</strong> Zaman yönetimi ve yanlış analizi (Her yanlış, öğrenilmemiş yeni bir konudur).</li>
+                        <li><strong>Son Viraj:</strong> Genel denemeler ve biyolojik saati sınav saatine sabitleme.</li>
+                    </ul>
+
+                    <div class="quote-box">
+                        "Bugün yaptığın fedakarlıklar, yarın elde edeceğin başarının temelidir. Asla pes etme!"
+                    </div>
+
+                    <h3>🗓️ İnteraktif Haftalık Ders Programı Oluşturucu</h3>
+                    <p>Aşağıdaki alana kendi haftalık ders hedeflerini yazarak kendi programını tasarlayabilir ve planlı çalışabilirsin:</p>
+
+                    <div class="planner-container">
+                        <h3 style="margin-top:0; color:#2c3e50;">Haftalık Çalışma Planım</h3>
+                        <div class="planner-grid">
+                            <div class="day-box">
+                                <h4>Pazartesi</h4>
+                                <textarea placeholder="Örn: Paragraf + Matematik Konu"></textarea>
+                            </div>
+                            <div class="day-box">
+                                <h4>Salı</h4>
+                                <textarea placeholder="Örn: Fen / Fizik + Türkçe Deneme"></textarea>
+                            </div>
+                            <div class="day-box">
+                                <h4>Çarşamba</h4>
+                                <textarea placeholder="Örn: Sosyal / Kimya + Soru Çözümü"></textarea>
+                            </div>
+                            <div class="day-box">
+                                <h4>Perşembe</h4>
+                                <textarea placeholder="Örn: Geometri + Biyoloji Tekrarı"></textarea>
+                            </div>
+                            <div class="day-box">
+                                <h4>Cuma</h4>
+                                <textarea placeholder="Örn: Genel Deneme + Yanlış Analizi"></textarea>
+                            </div>
+                            <div class="day-box">
+                                <h4>Hafta Sonu</h4>
+                                <textarea placeholder="Örn: Branş Denemeleri + Dinlenme"></textarea>
+                            </div>
+                        </div>
+                        <button class="planner-btn" onclick="alert('Haftalık programınız başarıyla kaydedildi! Başarılar dileriz!')">Programı Kaydet</button>
+                    </div>
                 `
             },
             ofke: {
-                title: "Öfke Kontrolü ve İletişim",
+                title: "Öfke Kontrolü ve Sağlıklı İletişim",
                 content: `
-                    <p>Öfke doğal bir duygudur. Önemli olan bunu 'Ben Dili' kullanarak doğru ifade edebilmektir.</p>
+                    <p>Öfke temel bir insani duygudur; problem olan öfkenin kendisi değil, dışa vurum şeklidir.</p>
                     <h3>1. 'Ben Dili' Kullanımı</h3>
-                    <p>"Sen beni dinlemiyorsun" yerine "Konuşurken dinlenmediğimi hissettiğimde üzülüyorum" demek iletişimi kurtarır.</p>
-                `
-            },
-            ders: {
-                title: "Verimli Ders Çalışma Teknikleri",
-                content: `
-                    <p>Çalışma süresinin uzunluğu değil, odaklanma seviyesi başarıyı getirir.</p>
-                    <h3>1. Pomodoro Tekniği</h3>
-                    <p>25 dakika odaklanmış çalışma + 5 dakika kısa mola döngüsü zihni taze tutar.</p>
+                    <p>"Sen beni dinlemiyorsun" yerine "Konuşurken dinlenmediğimi hissettiğimde üzülüyorum" diyerek duygunuzu ifade edin.</p>
+                    <h3>2. Mola Alma (Time-Out)</h3>
+                    <p>Tartışma anında nabız yükseldiğinde 15 dakika mola verip ortamdan uzaklaşmak ilişkiyi korur.</p>
                 `
             }
         };
 
         function navigateTo(pageId) {
-            // Tüm bölümleri gizle
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(sec => sec.classList.remove('active'));
 
-            // Menü aktifliğini ayarla
             const navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => link.classList.remove('active'));
 
             const activeNav = document.getElementById(`nav-${pageId}`);
             if (activeNav) activeNav.classList.add('active');
 
-            // İlgili bölümü göster
             const targetPage = document.getElementById(`page-${pageId}`);
             if (targetPage) {
                 targetPage.classList.add('active');
