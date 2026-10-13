@@ -13,31 +13,72 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Üst Bilgi (Header) Tasarımı */
+        /* Navigasyon / Üst Menü */
+        nav {
+            background-color: #1a252f;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Üst Header */
         header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
         }
 
         header p {
             font-size: 1.1rem;
             opacity: 0.9;
+            margin-top: 10px;
         }
 
         /* Ana İçerik Alanı */
         main {
-            max-width: 800px;
+            max-width: 850px;
             margin: 30px auto;
             padding: 0 20px;
+        }
+
+        /* Bölüm Başlıkları */
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
 
         /* Makale Kartları */
@@ -50,41 +91,128 @@
             border-left: 5px solid #3498db;
         }
 
-        article h2 {
+        article h3 {
             color: #2c3e50;
             margin-top: 0;
         }
 
-        /* Alt Bilgi (Footer) */
+        /* Hakkımda ve İletişim Kutuları */
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+        }
+
+        /* İletişim Formu */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Alt Bilgi */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
+            padding: 25px;
+            background-color: #1a252f;
             color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
             margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- Menü -->
+    <nav>
+        <ul>
+            <li><a href="#anasayfa">Ana Sayfa</a></li>
+            <li><a href="#yazilar">Rehberlik Yazıları</a></li>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="anasayfa">
         <h1>Psikolojik Danışmanlık ve Rehberlik Portalı</h1>
-        <p>Ruh sağlığı, kişisel gelişim ve rehberlik üzerine bilgilendirici içerikler.</p>
+        <p>Ruh sağlığı, kişisel gelişim, akademik başarı ve psikolojik dayanıklılık üzerine rehber kaynak.</p>
     </header>
 
     <main>
-        <article>
-            <h2>Stres Yönetimi ve Başa Çıkma Yolları</h2>
-            <p>Günlük yaşamda karşılaştığımız yoğun stresle başa çıkabilmek için nefes egzersizleri ve zaman yönetimi teknikleri büyük önem taşır...</p>
-        </article>
+        <!-- Yazılar Bölümü -->
+        <section id="yazilar">
+            <h2 class="section-title">📚 Rehberlik & Psikoloji Yazıları</h2>
+            
+            <article>
+                <h3>Stres Yönetimi ve Başa Çıkma Yolları</h3>
+                <p>Günlük yaşamda karşılaştığımız yoğun stresle başa çıkabilmek için nefes egzersizleri, zaman yönetimi teknikleri ve bilişsel yeniden yapılandırma büyük önem taşır...</p>
+            </article>
 
-        <article>
-            <h2>Sınav Kaygısı Nedir?</h2>
-            <p>Sınav öncesinde hissedilen hafif kaygı doğaldır ve odaklanmayı artırır. Ancak günlük işlevselliği etkilemeye başladığında...</p>
-        </article>
+            <article>
+                <h3>Sınav Kaygısı Nedir ve Nasıl Yönetilir?</h3>
+                <p>Sınav öncesinde hissedilen hafif kaygı doğaldır ve odaklanmayı artırır. Ancak kaygı düzeyi performansı düşürmeye başladığında doğru nefes ve olumlu öz-konuşma teknikleri devreye girmelidir...</p>
+            </article>
+
+            <article>
+                <h3>Öfke Kontrolü ve Sağlıklı İletişim</h3>
+                <p>Öfke, tıpkı sevinç ve üzüntü gibi doğal bir duygudur. Önemli olan öfkeyi bastırmak değil, onu başkalarına ve kendimize zarar vermeden "Ben Dili" kullanarak ifade edebilmektir...</p>
+            </article>
+
+            <article>
+                <h3>Verimli Ders Çalışma Teknikleri (Pomodoro & Bilişsel Haritalar)</h3>
+                <p>Saatlerce masada oturmak verimli çalıştığınız anlamına gelmez. Zihni dinlendirerek odaklanmayı sağlayan Pomodoro tekniği ve bilgiyi kalıcı kılan görsel haritalar ile başarıyı artırabilirsiniz...</p>
+            </article>
+        </section>
+
+        <!-- Hakkımda Bölümü -->
+        <section id="hakkimda">
+            <h2 class="section-title">👤 Hakkımda / Misyonumuz</h2>
+            <div class="info-card">
+                <p>Merhaba! Bu platform; Psikolojik Danışmanlık ve Rehberlik (PDR) alanında bilimsel, güncel ve bilgilendirici içerikleri herkes için erişilebilir kılmak amacıyla kurulmuştur.</p>
+                <p>Amacımız; bireylerin özfarkındalık kazanmalarına, akademik ve kişisel gelişim süreçlerinde doğru bilgiye ulaşmalarına katkı sağlamaktır.</p>
+            </div>
+        </section>
+
+        <!-- İletişim Bölümü -->
+        <section id="iletisim">
+            <h2 class="section-title">✉️ Bize Ulaşın / Soru Sorun</h2>
+            <div class="info-card contact-form">
+                <form action="#" method="post" onsubmit="alert('Mesajınız alındı!'); return false;">
+                    <label for="name">Adınız Soyadınız:</label>
+                    <input type="text" id="name" name="name" placeholder="Örn: Ahmet Yılmaz" required>
+
+                    <label for="email">E-posta Adresiniz:</label>
+                    <input type="email" id="email" name="email" placeholder="Örn: ahmet@example.com" required>
+
+                    <label for="message">Mesajınız / Sorunuz:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Danışmak istediğiniz konuyu yazabilirsiniz..." required></textarea>
+
+                    <button type="submit">Gönder</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
